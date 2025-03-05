@@ -41,7 +41,7 @@ const Scorecard = () => {
       {/* Detailed Checks Table */}
       <Card>
         <CardHeader>
-          <CardTitle>Security Checks Breakdown</CardTitle>
+          <CardTitle className="text-xl">Security Checks Breakdown</CardTitle>
         </CardHeader>
         <CardContent>
           <div className="w-full overflow-x-auto">

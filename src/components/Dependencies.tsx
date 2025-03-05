@@ -38,7 +38,7 @@ const Dependencies = () => {
   return (
     <Card>
       <CardHeader>
-        <CardTitle>Dependencies</CardTitle>
+        <CardTitle className="text-xl">Dependencies</CardTitle>
       </CardHeader>
       <CardContent>
         <Table>
@@ -60,7 +60,7 @@ const Dependencies = () => {
           </TableBody>
         </Table>
         {/* Pagination */}
-        <Pagination className="mt-4">
+        <Pagination className="mt-4 justify-end">
           <PaginationContent>
             {/* Previous Button */}
             <PaginationItem>
