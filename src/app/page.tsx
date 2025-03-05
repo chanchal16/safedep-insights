@@ -1,30 +1,23 @@
 "use client";
-import { useEffect, useState } from "react";
+import Dependencies from "@/components/Dependencies";
+import Header from "@/components/Header";
+import Metrics from "@/components/Metrics";
+import { useInsights } from "@/contexts/InsightContext";
 
 export default function Home() {
-  const [data, setData] = useState();
-  useEffect(() => {
-    const fetchData = async () => {
-      try {
-        const response = await fetch("/api/fetch-data");
-        if (response.ok) {
-          const responseData = await response.json();
-          setData(responseData);
-          console.log(responseData);
-        } else {
-          console.error("Error fetching data:", response.status);
-        }
-      } catch (error) {
-        console.error("Error fetching data:", error);
-      }
-    };
+  const { data, loading } = useInsights();
 
-    fetchData();
-  }, []);
-
+  if (!data && loading) {
+    return <div>Loading...</div>;
+  }
   return (
-    <div className="grid grid-rows-[20px_1fr_20px] items-center justify-items-center min-h-screen p-8 pb-20 gap-16 sm:p-20 font-[family-name:var(--font-geist-sans)]">
-      <h1>Insights</h1>
+    <div className="p-8 space-y-8 font-[family-name:var(--font-geist-sans)]">
+      {/* Header */}
+      <Header />
+      {/* Key Metrics */}
+      <Metrics />
+      {/* dependencies */}
+      <Dependencies />
     </div>
   );
 }
