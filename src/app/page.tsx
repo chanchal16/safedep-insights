@@ -2,6 +2,7 @@
 import Dependencies from "@/components/Dependencies";
 import Header from "@/components/Header";
 import Metrics from "@/components/Metrics";
+import Scorecard from "@/components/ScoreCard";
 import { useInsights } from "@/contexts/InsightContext";
 
 export default function Home() {
@@ -18,6 +19,8 @@ export default function Home() {
       <Metrics />
       {/* dependencies */}
       <Dependencies />
+      {/* score checks */}
+      <Scorecard />
     </div>
   );
 }
