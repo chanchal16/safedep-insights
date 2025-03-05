@@ -3,6 +3,7 @@ import Dependencies from "@/components/Dependencies";
 import Header from "@/components/Header";
 import Metrics from "@/components/Metrics";
 import Scorecard from "@/components/ScoreCard";
+import VulnerabilitySummary from "@/components/Vulnerability";
 import { useInsights } from "@/contexts/InsightContext";
 
 export default function Home() {
@@ -21,6 +22,8 @@ export default function Home() {
       <Dependencies />
       {/* score checks */}
       <Scorecard />
+      {/* vulnerability */}
+      <VulnerabilitySummary />
     </div>
   );
 }
