@@ -13,7 +13,8 @@ import { useInsights } from "@/contexts/InsightContext";
 const Scorecard = () => {
   const { data } = useInsights();
   const { insight } = data;
-  const checks = insight?.projectInsights[0]?.scorecard?.checks;
+  const projInsights = insight?.projectInsights ?? []
+  const checks = projInsights[0]?.scorecard?.checks;
 
   // Determine icon and color based on score
   const getScoreIcon = (score: number) => {
@@ -59,7 +60,7 @@ const Scorecard = () => {
                       className="grid grid-cols-4 p-3 border-b hover:bg-gray-50 items-center"
                     >
                       <div className="flex items-center space-x-2">
-                        {getScoreIcon(check?.score)}
+                        {getScoreIcon(check?.score ?? 0)}
                         <span>{check.name}</span>
                       </div>
                       <div>
@@ -71,7 +72,7 @@ const Scorecard = () => {
                               ? "secondary"
                               : check.score < 5
                               ? "destructive"
-                              : "warning"
+                              : "outline"
                           }
                         >
                           {check.score === -1 || !check.score

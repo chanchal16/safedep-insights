@@ -5,7 +5,7 @@ import { InsightService } from "@buf/safedep_api.connectrpc_es/safedep/services/
 import { createPromiseClient } from "@connectrpc/connect";
 
 function authenticationInterceptor(token: string, tenant: string) {
-  return (next: any) => async (req: any) => {
+  return (next: any) => async (req: any) => {  // eslint-disable-line @typescript-eslint/no-explicit-any
     req.header.set("authorization", token);
     req.header.set("x-tenant-id", tenant);
     return await next(req);

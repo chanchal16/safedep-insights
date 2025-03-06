@@ -12,16 +12,16 @@ const Header = () => {
       </h1>
       <p className="text-muted-foreground">
         Ecosystem:{" "}
-        {packageVersion?.package?.ecosystem.replace("ECOSYSTEM_", "")}
+        {(packageVersion?.package?.ecosystem ?? "").replace("ECOSYSTEM_", "")}
       </p>
       <p className="text-muted-foreground">
         Published: {publishedDate?.split("T")[0]}
       </p>
       <p className="text-muted-foreground">
-        License: {insight?.licenses?.licenses[0]?.licenseId}
+        License: {(insight?.licenses?.licenses ?? [])[0]?.licenseId}
       </p>
       <p className="text-muted-foreground">
-        Registries: {insight?.registries.join(", ")}
+        Registries: {(insight?.registries ?? []).join(", ")}
       </p>
     </div>
   );

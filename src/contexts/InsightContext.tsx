@@ -4,13 +4,7 @@ import { createContext, useContext, useEffect, useMemo, useState } from "react";
 
 const initialData = {
   insight: {},
-  packageVersion: {
-    package: {
-      ecosystem: "",
-      name: "",
-    },
-    version: "",
-  },
+  packageVersion: {},
 };
 
 const InsightContext = createContext<InsightContextType>({
@@ -19,9 +13,9 @@ const InsightContext = createContext<InsightContextType>({
   loading: true,
 });
 
-const InsightProvider = ({ children }: any) => {
-  const [data, setData] = useState<any>({});
-  const [loading, setLoading] = useState<boolean>(false);
+const InsightProvider = ({ children }: any) => {  // eslint-disable-line @typescript-eslint/no-explicit-any
+  const [data, setData] = useState<any>();  // eslint-disable-line @typescript-eslint/no-explicit-any
+  const [loading, setLoading] = useState<boolean>(true);
 
   useEffect(() => {
     fetchData();

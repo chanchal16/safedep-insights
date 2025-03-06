@@ -96,7 +96,7 @@ export type InsightData = {
 
 export interface InsightContextType {
   data: InsightData;
-  setData: React.Dispatch<React.SetStateAction<any>>;
+  setData: React.Dispatch<React.SetStateAction<any>>;  // eslint-disable-line @typescript-eslint/no-explicit-any
   loading: boolean;
 }
 

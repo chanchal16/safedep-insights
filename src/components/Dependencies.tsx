@@ -54,7 +54,7 @@ const Dependencies = () => {
               <TableRow key={index}>
                 <TableCell>{dep.packageVersion?.package?.name}</TableCell>
                 <TableCell>{dep.packageVersion?.version}</TableCell>
-                <TableCell>{dep?.relation.replace("RELATION_", "")}</TableCell>
+                <TableCell>{(dep?.relation ?? '').replace("RELATION_", "")}</TableCell>
               </TableRow>
             ))}
           </TableBody>
