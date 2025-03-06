@@ -4,6 +4,8 @@ import { Skeleton } from "./ui/skeleton";
 const Loader = () => {
   return (
     <div className="p-8 space-y-8">
+      <h1 className="text-4xl pb-2 font-medium">Package Insights</h1>
+      <hr></hr>
       {/* header */}
       <div>
         <Skeleton className="h-44 w-full rounded-xl" />
